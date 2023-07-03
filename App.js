@@ -4,7 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Test📔</Text>
+      <Text>alleviate the data imbalance of the collected images, new wildfire images were generated using the CycleGAN as a data augmentation strategy. The objective of using the image-generation model is to convert non-w</Text>
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +15,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: '#00ff90',
+    alignItems: 'flex-end',
     justifyContent: 'center',
+    // justifyContent: 'flex-end',
   },
 });
