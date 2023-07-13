@@ -34,7 +34,7 @@ const Input = ({ changeTextCallBack, modalVisible, hideModal }) => {
           source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
         ></Image>
 
-		<Image
+        <Image
           style={styles.logo}
           source={require("../assets/icon.png")}
         ></Image>
@@ -44,26 +44,31 @@ const Input = ({ changeTextCallBack, modalVisible, hideModal }) => {
           // its an event handler
           onChangeText={storeText}
         />
-
-        <Button
-          title="Confirm"
-          onPress={() => {
-            changeTextCallBack(text);
-          }}
-        />
-        <Button
+        <View style={styles.buttonContainer}>
+          {text && (
+            <Button
+              title="Confirm"
+              //   disabled={text.length === 0}
+              disabled={!text}
+              onPress={() => {
+                changeTextCallBack(text);
+              }}
+            />
+          )}
+          {/* <Button
           title="Cancel"
           onPress={() => {
             changeTextCallBack("");
           }}
-        />
-        <Button
-          title="CancelWithSetText"
-          onPress={() => {
-            setText("");
-            hideModal();
-          }}
-        />
+        /> */}
+          <Button
+            title="CancelWithSetText"
+            onPress={() => {
+              setText("");
+              hideModal();
+            }}
+          />
+        </View>
       </View>
     </Modal>
   );
@@ -92,6 +97,11 @@ const styles = StyleSheet.create({
   logo: {
     width: 66,
     height: 58,
+  },
+  // make button in a row each with 50% width
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
